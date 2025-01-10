@@ -33,19 +33,18 @@ public class FollyPlayer
             new CodeMatch(OpCodes.Ldarg_0),
             new CodeMatch(OpCodes.Ldflda, AccessTools.Method("JumpKing.GameManager.TitleScreen.FollyPlayer:m_center")),
             new CodeMatch(OpCodes.Call, AccessTools.Method("Microsoft.Xna.Framework.Point:ToVector2"))
-        ).ThrowIfInvalid($"Cant find code in {nameof(FollyPlayer)}");
-        matcher.Advance(3);
-        matcher.InsertAndAdvance(
+        ).ThrowIfInvalid($"Cant find code in {nameof(FollyPlayer)}")
+        .Advance(3)
+        .InsertAndAdvance(
             new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(FollyPlayer), nameof(fixPosition)))
-        );
-
-        matcher.MatchStartForward(
+        )
+        .MatchStartForward(
             // m_effect
             new CodeMatch(OpCodes.Ldarg_0),
             new CodeMatch(OpCodes.Ldfld,  AccessTools.Method("JumpKing.GameManager.TitleScreen.FollyPlayer:m_effect"))
-        ).ThrowIfInvalid($"Cant find code in {nameof(FollyPlayer)}");
-        matcher.Advance(2);
-        matcher.InsertAndAdvance(
+        ).ThrowIfInvalid($"Cant find code in {nameof(FollyPlayer)}")
+        .Advance(2)
+        .InsertAndAdvance(
             new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(FollyPlayer), nameof(flipSpiritV)))
         );
 

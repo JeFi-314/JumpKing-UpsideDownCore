@@ -27,22 +27,22 @@ public class AirAnim
         CodeMatcher matcher = new CodeMatcher(instructions , generator);
 
         matcher.MatchStartForward(
-                // base.body.Velocity.Y > 0f
-                new CodeMatch(OpCodes.Ldarg_0),
-                new CodeMatch(OpCodes.Call, AccessTools.Method("JumpKing.Player.PlayerNode:get_body")),
-                new CodeMatch(OpCodes.Ldflda, AccessTools.Field("JumpKing.Player.BodyComp:Velocity")),
-                new CodeMatch(OpCodes.Ldfld, AccessTools.Field("Microsoft.Xna.Framework.Vector2:Y")),
-                new CodeMatch(OpCodes.Ldc_R4, (float)0),
-                new CodeMatch(OpCodes.Ble_Un_S)
-            )
-            .ThrowIfInvalid($"Cant find code in {nameof(AirAnim)}");
-        matcher.Advance(5);
+            // base.body.Velocity.Y > 0f
+            new CodeMatch(OpCodes.Ldarg_0),
+            new CodeMatch(OpCodes.Call, AccessTools.Method("JumpKing.Player.PlayerNode:get_body")),
+            new CodeMatch(OpCodes.Ldflda, AccessTools.Field("JumpKing.Player.BodyComp:Velocity")),
+            new CodeMatch(OpCodes.Ldfld, AccessTools.Field("Microsoft.Xna.Framework.Vector2:Y")),
+            new CodeMatch(OpCodes.Ldc_R4, (float)0),
+            new CodeMatch(OpCodes.Ble_Un_S)
+        )
+        .ThrowIfInvalid($"Cant find code in {nameof(AirAnim)}")
+        .Advance(5);
         var label = matcher.Instruction.operand;
-        matcher.RemoveInstruction();
-        matcher.InsertAndAdvance(
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(AirAnim), nameof(revLEff))),
-                new CodeInstruction(OpCodes.Brtrue_S, label)
-            );
+        matcher.RemoveInstruction()
+        .InsertAndAdvance(
+            new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(AirAnim), nameof(revLEff))),
+            new CodeInstruction(OpCodes.Brtrue_S, label)
+        );
 
         return matcher.Instructions();
     }

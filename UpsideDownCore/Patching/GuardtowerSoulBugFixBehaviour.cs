@@ -29,9 +29,9 @@ public class GuardtowerSoulBugFixBehaviour
             new CodeMatch(OpCodes.Ldstr, "YStep"),
             new CodeMatch(OpCodes.Callvirt, AccessTools.PropertyGetter(typeof(Dictionary<string, object>), "Item")),
             new CodeMatch(OpCodes.Unbox_Any, typeof(int))
-        ).ThrowIfInvalid($"Cant find code in {nameof(GuardtowerSoulBugFixBehaviour)}");
-        matcher.Advance(4);
-        matcher.InsertAndAdvance(
+        ).ThrowIfInvalid($"Cant find code in {nameof(GuardtowerSoulBugFixBehaviour)}")
+        .Advance(4)
+        .InsertAndAdvance(
             new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(GuardtowerSoulBugFixBehaviour), nameof(negative)))
         );
 

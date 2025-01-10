@@ -36,9 +36,9 @@ public class JumpState
             new CodeMatch(OpCodes.Ldarg_1),
             new CodeMatch(OpCodes.Mul),
             new CodeMatch(OpCodes.Stfld, AccessTools.Field("Microsoft.Xna.Framework.Vector2:Y"))
-        ).ThrowIfInvalid($"Cant find code in {nameof(JumpState)}");
-        matcher.Advance(5);
-        matcher.InsertAndAdvance(
+        ).ThrowIfInvalid($"Cant find code in {nameof(JumpState)}")
+        .Advance(5)
+        .InsertAndAdvance(
             new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(JumpState), nameof(negative)))
         );
 

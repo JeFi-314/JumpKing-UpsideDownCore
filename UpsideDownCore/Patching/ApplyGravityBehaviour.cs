@@ -33,13 +33,12 @@ public class ApplyGravityBehaviour
             new CodeMatch(OpCodes.Ldloc_1),
             new CodeMatch(OpCodes.Add),
             new CodeMatch(OpCodes.Stind_R4)
-        ).ThrowIfInvalid($"Cant find code in {nameof(ApplyGravityBehaviour)}");
-        matcher.Advance(6);
-        matcher.InsertAndAdvance(
+        ).ThrowIfInvalid($"Cant find code in {nameof(ApplyGravityBehaviour)}")
+        .Advance(6)
+        .InsertAndAdvance(
             new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ApplyGravityBehaviour), nameof(negative)))
-        );
-
-        matcher.MatchStartForward(
+        )
+        .MatchStartForward(
             // bodyComp.Velocity.Y = Math.Min(bodyComp.Velocity.Y, PlayerValues.MAX_FALL);
             new CodeMatch(OpCodes.Ldloc_0),
             new CodeMatch(OpCodes.Ldflda, AccessTools.Field("JumpKing.Player.BodyComp:Velocity")),
@@ -49,9 +48,9 @@ public class ApplyGravityBehaviour
             new CodeMatch(OpCodes.Call, AccessTools.Method("JumpKing.PlayerValues:get_MAX_FALL")),
             new CodeMatch(OpCodes.Call, AccessTools.Method("System.Math:Min", new Type[]{typeof(float), typeof(float)})),
             new CodeMatch(OpCodes.Stfld, AccessTools.Field("Microsoft.Xna.Framework.Vector2:Y"))
-        ).ThrowIfInvalid($"Cant find code in {nameof(ApplyGravityBehaviour)}");
-        matcher.Advance(6);
-        matcher.RemoveInstruction().InsertAndAdvance(
+        ).ThrowIfInvalid($"Cant find code in {nameof(ApplyGravityBehaviour)}")
+        .Advance(6)
+        .RemoveInstruction().InsertAndAdvance(
             new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ApplyGravityBehaviour), nameof(capYVelocity)))
         );
 

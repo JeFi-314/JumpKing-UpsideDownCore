@@ -32,9 +32,9 @@ public class PlayerEntity
             // Camera.TransformVector2(vector)
             new CodeMatch(OpCodes.Ldloc_0),
             new CodeMatch(OpCodes.Call, AccessTools.Method("JumpKing.Camera:TransformVector2"))
-        ).ThrowIfInvalid($"Cant find code in {nameof(PlayerEntity)}");
-        matcher.Advance(2);
-        matcher.InsertAndAdvance(
+        ).ThrowIfInvalid($"Cant find code in {nameof(PlayerEntity)}")
+        .Advance(2)
+        .InsertAndAdvance(
             new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlayerEntity), nameof(fixPosition)))
         );
 
@@ -42,9 +42,9 @@ public class PlayerEntity
             // m_flip
             new CodeMatch(OpCodes.Ldarg_0),
             new CodeMatch(OpCodes.Ldfld,  AccessTools.Method("JumpKing.Player.PlayerEntity:m_flip"))
-        ).ThrowIfInvalid($"Cant find code in {nameof(PlayerEntity)}");
-        matcher.Advance(2);
-        matcher.InsertAndAdvance(
+        ).ThrowIfInvalid($"Cant find code in {nameof(PlayerEntity)}")
+        .Advance(2)
+        .InsertAndAdvance(
             new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(PlayerEntity), nameof(flipSpiritV)))
         );
 

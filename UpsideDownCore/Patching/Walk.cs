@@ -28,22 +28,22 @@ public class Walk
         CodeMatcher matcher = new CodeMatcher(instructions , generator);
 
         matcher.MatchStartForward(
-                // base.body.Velocity.Y < 0f
-                new CodeMatch(OpCodes.Ldarg_0),
-                new CodeMatch(OpCodes.Call, AccessTools.Method("JumpKing.Player.PlayerNode:get_body")),
-                new CodeMatch(OpCodes.Ldflda, AccessTools.Method("JumpKing.Player.BodyComp:Velocity")),
-                new CodeMatch(OpCodes.Ldfld, AccessTools.Method("Microsoft.Xna.Framework.Vector2:Y")),
-                new CodeMatch(OpCodes.Ldc_R4, (float)0),
-                new CodeMatch(OpCodes.Bge_Un_S)
-            )
-            .ThrowIfInvalid($"Cant find code in {nameof(Walk)}");
-        matcher.Advance(5);
+            // base.body.Velocity.Y < 0f
+            new CodeMatch(OpCodes.Ldarg_0),
+            new CodeMatch(OpCodes.Call, AccessTools.Method("JumpKing.Player.PlayerNode:get_body")),
+            new CodeMatch(OpCodes.Ldflda, AccessTools.Method("JumpKing.Player.BodyComp:Velocity")),
+            new CodeMatch(OpCodes.Ldfld, AccessTools.Method("Microsoft.Xna.Framework.Vector2:Y")),
+            new CodeMatch(OpCodes.Ldc_R4, (float)0),
+            new CodeMatch(OpCodes.Bge_Un_S)
+        )
+        .ThrowIfInvalid($"Cant find code in {nameof(Walk)}")
+        .Advance(5);
         var label = matcher.Instruction.operand;
-        matcher.RemoveInstruction();
-        matcher.InsertAndAdvance(
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Walk), nameof(revGEff))),
-                new CodeInstruction(OpCodes.Brtrue_S, label)
-            );
+        matcher.RemoveInstruction()
+        .InsertAndAdvance(
+            new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Walk), nameof(revGEff))),
+            new CodeInstruction(OpCodes.Brtrue_S, label)
+        );
 
         return matcher.Instructions();
     }

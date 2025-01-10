@@ -31,20 +31,20 @@ public class Camera
         CodeMatcher matcher = new CodeMatcher(instructions , generator);
 
         matcher.MatchStartForward(
-                // p_velocity.Y < 0f
-                new CodeMatch(OpCodes.Ldarg_1),
-                new CodeMatch(OpCodes.Ldfld, AccessTools.Field("Microsoft.Xna.Framework.Vector2:Y")),
-                new CodeMatch(OpCodes.Ldc_R4, (float)0),
-                new CodeMatch(OpCodes.Bge_Un_S)
-            )
-            .ThrowIfInvalid($"Cant find code in {nameof(Camera)}");
-        matcher.Advance(3);
+            // p_velocity.Y < 0f
+            new CodeMatch(OpCodes.Ldarg_1),
+            new CodeMatch(OpCodes.Ldfld, AccessTools.Field("Microsoft.Xna.Framework.Vector2:Y")),
+            new CodeMatch(OpCodes.Ldc_R4, (float)0),
+            new CodeMatch(OpCodes.Bge_Un_S)
+        )
+        .ThrowIfInvalid($"Cant find code in {nameof(Camera)}")
+        .Advance(3);
         var label = matcher.Instruction.operand;
-        matcher.RemoveInstruction();
-        matcher.Insert(
-                new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Camera), nameof(revGEff))),
-                new CodeInstruction(OpCodes.Brtrue_S, label)
-            );
+        matcher.RemoveInstruction()
+        .Insert(
+            new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Camera), nameof(revGEff))),
+            new CodeInstruction(OpCodes.Brtrue_S, label)
+        );
 
         return matcher.Instructions();
     }

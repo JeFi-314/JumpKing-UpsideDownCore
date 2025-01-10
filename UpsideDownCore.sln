@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35431.28
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpsideDownCore", "UpsideDownCore\UpsideDownCore.csproj", "{31D8EFB7-12AE-4B93-86F5-994D833D1BF0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31D8EFB7-12AE-4B93-86F5-994D833D1BF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31D8EFB7-12AE-4B93-86F5-994D833D1BF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31D8EFB7-12AE-4B93-86F5-994D833D1BF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31D8EFB7-12AE-4B93-86F5-994D833D1BF0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52A5F9D1-CE03-4951-83CE-E69EE9BB972A}
+	EndGlobalSection
+EndGlobal

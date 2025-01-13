@@ -42,6 +42,7 @@ public class ResolveYCollisionBehaviour
         );
 
         matcher.MatchStartForward(
+            //`if (info.SlopeType == SlopeType.None || bodyComp.Velocity.Y <= 0f || bodyComp.IsOnGround)`
             // bodyComp.Velocity.Y <= 0f
             new CodeMatch(OpCodes.Ldloc_0),
             new CodeMatch(OpCodes.Ldflda, AccessTools.Field("JumpKing.Player.BodyComp:Velocity")),
@@ -59,6 +60,7 @@ public class ResolveYCollisionBehaviour
         );
 
         matcher.MatchStartForward(
+            //`if (info.Quark && bodyComp.Velocity.Y == PlayerValues.MAX_FALL)`
             // bodyComp.Velocity.Y == PlayerValues.MAX_FALL
             new CodeMatch(OpCodes.Ldloc_0),
             new CodeMatch(OpCodes.Ldflda, AccessTools.Field("JumpKing.Player.BodyComp:Velocity")),

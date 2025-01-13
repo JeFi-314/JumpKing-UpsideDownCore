@@ -27,6 +27,7 @@ public class AirAnim
         CodeMatcher matcher = new CodeMatcher(instructions , generator);
 
         matcher.MatchStartForward(
+    		//`else if (base.body.Velocity.Y < 0f)`
             // base.body.Velocity.Y > 0f
             new CodeMatch(OpCodes.Ldarg_0),
             new CodeMatch(OpCodes.Call, AccessTools.Method("JumpKing.Player.PlayerNode:get_body")),

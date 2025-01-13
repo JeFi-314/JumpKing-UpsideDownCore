@@ -28,6 +28,7 @@ public class PlayerEntity
     private static IEnumerable<CodeInstruction> transpileDraw(IEnumerable<CodeInstruction> instructions , ILGenerator generator) {
         CodeMatcher matcher = new CodeMatcher(instructions , generator);
 
+        //`m_sprite.Draw(Camera.TransformVector2(vector), m_flip);`
         matcher.MatchStartForward(
             // Camera.TransformVector2(vector)
             new CodeMatch(OpCodes.Ldloc_0),

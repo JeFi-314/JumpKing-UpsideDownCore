@@ -27,7 +27,8 @@ private static IEnumerable<CodeInstruction> transpileMyRun(IEnumerable<CodeInstr
         CodeMatcher matcher = new CodeMatcher(instructions , generator);
 
         matcher.MatchStartForward(
-            // base.body.Velocity.Y > 0f
+            //`if (base.body.LastVelocity.Y != PlayerValues.MAX_FALL)`
+            // base.body.LastVelocity.Y != PlayerValues.MAX_FALL
             new CodeMatch(OpCodes.Ldarg_0),
             new CodeMatch(OpCodes.Call, AccessTools.Method("JumpKing.Player.PlayerNode:get_body")),
             new CodeMatch(OpCodes.Callvirt, AccessTools.Method("JumpKing.Player.BodyComp:get_LastVelocity")),

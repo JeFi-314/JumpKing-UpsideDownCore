@@ -28,7 +28,8 @@ public class LevelScreen
         CodeMatcher matcher = new CodeMatcher(instructions , generator);
 
         matcher.MatchStartForward(
-            // block2.GetRect().Y < slopeBlock.GetRect().Y in `if (slopeBlock == null || block2.GetRect().Y < slopeBlock.GetRect().Y)`
+            //`if (slopeBlock == null || block2.GetRect().Y < slopeBlock.GetRect().Y)`
+            // block2.GetRect().Y < slopeBlock.GetRect().Y
             new CodeMatch(OpCodes.Ldloc_S),
             new CodeMatch(OpCodes.Callvirt, AccessTools.Method("JumpKing.Level.IBlock:GetRect")),
             new CodeMatch(OpCodes.Ldfld, AccessTools.Field("Microsoft.Xna.Framework.Rectangle:Y")),
@@ -46,7 +47,8 @@ public class LevelScreen
         );
 
         matcher.MatchStartForward(
-            // bloblock2.GetRect().Y < block.GetRect().Y in `else if (block == null || block2.GetRect().Y < block.GetRect().Y)`
+            //`else if (block == null || block2.GetRect().Y < block.GetRect().Y)`
+            // bloblock2.GetRect().Y < block.GetRect().Y
             new CodeMatch(OpCodes.Ldloc_S),
             new CodeMatch(OpCodes.Callvirt, AccessTools.Method("JumpKing.Level.IBlock:GetRect")),
             new CodeMatch(OpCodes.Ldfld, AccessTools.Field("Microsoft.Xna.Framework.Rectangle:Y")),
@@ -64,7 +66,8 @@ public class LevelScreen
         );
 
         matcher.MatchStartForward(
-            // // if (block != null && slopeBlock != null && block.GetRect().Y <= slopeBlock.GetRect().Y && (slopeBlock.GetSlopeType() == SlopeType.TopLeft || slopeBlock.GetSlopeType() == SlopeType.TopRight))
+            //`if (block != null && slopeBlock != null && block.GetRect().Y <= slopeBlock.GetRect().Y 
+            //&& (slopeBlock.GetSlopeType() == SlopeType.TopLeft || slopeBlock.GetSlopeType() == SlopeType.TopRight))`
             // block != null && slopeBlock != null 
             new CodeMatch(OpCodes.Ldloc_S),
             new CodeMatch(OpCodes.Brfalse_S),

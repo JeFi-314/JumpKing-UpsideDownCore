@@ -31,6 +31,7 @@ public class Camera
         CodeMatcher matcher = new CodeMatcher(instructions , generator);
 
         matcher.MatchStartForward(
+            //`if (Math.Sign(value) != Math.Sign(0f - p_velocity.Y) || (p_velocity.Y < 0f && Math.Abs(p_velocity.Y) < 3f))`
             // p_velocity.Y < 0f
             new CodeMatch(OpCodes.Ldarg_1),
             new CodeMatch(OpCodes.Ldfld, AccessTools.Field("Microsoft.Xna.Framework.Vector2:Y")),

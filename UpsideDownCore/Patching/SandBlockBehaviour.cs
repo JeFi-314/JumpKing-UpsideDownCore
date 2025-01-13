@@ -40,7 +40,8 @@ public class SandBlockBehaviour
         CodeMatcher matcher = new CodeMatcher(instructions , generator);
 
         matcher.MatchStartForward(
-            // bodyComp.Velocity.Y <= 0f in `float num = ((IsPlayerOnBlock && bodyComp.Velocity.Y <= 0f) ? 0.5f : 1f);`
+            //`float num = ((IsPlayerOnBlock && bodyComp.Velocity.Y <= 0f) ? 0.5f : 1f);`
+            // bodyComp.Velocity.Y <= 0f
             new CodeMatch(OpCodes.Ldloc_0),
             new CodeMatch(OpCodes.Ldflda, AccessTools.Field("JumpKing.Player.BodyComp:Velocity")),
             new CodeMatch(OpCodes.Ldfld, AccessTools.Field("Microsoft.Xna.Framework.Vector2:Y")),
@@ -57,7 +58,8 @@ public class SandBlockBehaviour
         );
 
         matcher.MatchStartForward(
-            // bodyComp.Velocity.Y > 0f in `if (!IsPlayerOnBlock && bodyComp.IsOnGround && bodyComp.Velocity.Y > 0f)`
+            //`if (!IsPlayerOnBlock && bodyComp.IsOnGround && bodyComp.Velocity.Y > 0f)`
+            // bodyComp.Velocity.Y > 0f
             new CodeMatch(OpCodes.Ldloc_0),
             new CodeMatch(OpCodes.Ldflda, AccessTools.Field("JumpKing.Player.BodyComp:Velocity")),
             new CodeMatch(OpCodes.Ldfld, AccessTools.Field("Microsoft.Xna.Framework.Vector2:Y")),

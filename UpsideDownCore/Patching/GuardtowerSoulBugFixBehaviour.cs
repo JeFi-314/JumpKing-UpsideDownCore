@@ -24,7 +24,8 @@ public class GuardtowerSoulBugFixBehaviour
         CodeMatcher matcher = new CodeMatcher(instructions , generator);
 
         matcher.MatchStartForward(
-            // (int)behaviourContext["YStep"]) in `int num2 = (flag2 ? ((int)behaviourContext["YStep"]) : (-1));`
+            //`int num2 = (flag2 ? ((int)behaviourContext["YStep"]) : (-1));`
+            // ((int)behaviourContext["YStep"])
             new CodeMatch(OpCodes.Ldarg_1),
             new CodeMatch(OpCodes.Ldstr, "YStep"),
             new CodeMatch(OpCodes.Callvirt, AccessTools.PropertyGetter(typeof(Dictionary<string, object>), "Item")),

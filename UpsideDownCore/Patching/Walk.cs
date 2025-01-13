@@ -28,6 +28,7 @@ public class Walk
         CodeMatcher matcher = new CodeMatcher(instructions , generator);
 
         matcher.MatchStartForward(
+		    //`if (base.body.Velocity.Y < 0f && base.body.IsOnBlock(typeof(SandBlock)))`
             // base.body.Velocity.Y < 0f
             new CodeMatch(OpCodes.Ldarg_0),
             new CodeMatch(OpCodes.Call, AccessTools.Method("JumpKing.Player.PlayerNode:get_body")),

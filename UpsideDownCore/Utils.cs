@@ -8,10 +8,10 @@ public static class Utils
             switch (opcode) {
                 case "eq": opcode = "eq"; break;
                 case "ne": opcode = "ne"; break;
-                case "gt": opcode = "le"; break;
-                case "lt": opcode = "ge"; break;
-                case "ge": opcode = "lt"; break;
-                case "le": opcode = "gt"; break;
+                case "gt": opcode = "lt"; break;
+                case "lt": opcode = "gt"; break;
+                case "ge": opcode = "le"; break;
+                case "le": opcode = "ge"; break;
                 default: throw new Exception("Invalid opcode");
             }
         }

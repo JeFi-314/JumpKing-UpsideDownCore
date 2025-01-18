@@ -1,18 +1,16 @@
 ﻿using JumpKing.PauseMenu.BT.Actions;
 
-namespace UpsideDownCore.Menu
+namespace UpsideDownCore.Menu;
+public class ToggleReverseGravity : ITextToggle
 {
-    public class ToggleReverseGravity : ITextToggle
+    public ToggleReverseGravity() : base(UpsideDownCore.isRevertGravity)
     {
-        public ToggleReverseGravity() : base(UpsideDownCore.isRevertGravity)
-        {
-        }
+    }
 
-        protected override string GetName() => "Revert Gravity";
+    protected override string GetName() => "Revert Gravity";
 
-        protected override void OnToggle()
-        {
-            UpsideDownCore.isRevertGravity = toggle;
-        }
+    protected override void OnToggle()
+    {
+        UpsideDownCore.isRevertGravity = toggle;
     }
 }

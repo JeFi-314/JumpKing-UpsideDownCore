@@ -1,18 +1,16 @@
 ﻿using JumpKing.PauseMenu.BT.Actions;
 
-namespace UpsideDownCore.Menu
+namespace UpsideDownCore.Menu;
+public class ToggleUpsideDown : ITextToggle
 {
-    public class ToggleUpsideDown : ITextToggle
+    public ToggleUpsideDown() : base(UpsideDownCore.isUpsideDown)
     {
-        public ToggleUpsideDown() : base(UpsideDownCore.isUpsideDown)
-        {
-        }
+    }
 
-        protected override string GetName() => "Upside-Down";
+    protected override string GetName() => "Upside-Down";
 
-        protected override void OnToggle()
-        {
-            UpsideDownCore.isUpsideDown = toggle;
-        }
+    protected override void OnToggle()
+    {
+        UpsideDownCore.isUpsideDown = toggle;
     }
 }

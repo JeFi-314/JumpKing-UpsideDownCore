@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace UpsideDownCore.Patching;
-public class FollyPlayer
+internal class FollyPlayer
 {
     public FollyPlayer (Harmony harmony)
     {

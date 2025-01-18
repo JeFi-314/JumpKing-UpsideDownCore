@@ -11,7 +11,7 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 namespace UpsideDownCore.Patching;
-public class SandBlockBehaviour
+internal class SandBlockBehaviour
 {
     public SandBlockBehaviour (Harmony harmony)
     {

@@ -11,7 +11,7 @@ using JumpKing.GameManager;
 using System.Diagnostics;
 
 namespace UpsideDownCore.Patching;
-public class ResolveXCollisionBehaviour
+internal class ResolveXCollisionBehaviour
 {
     public ResolveXCollisionBehaviour (Harmony harmony)
     {

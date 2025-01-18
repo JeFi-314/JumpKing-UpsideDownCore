@@ -12,7 +12,7 @@ using System.Diagnostics;
 using System.Linq.Expressions;
 
 namespace UpsideDownCore.Patching;
-public class Walk
+internal class Walk
 {
     public Walk (Harmony harmony)
     {

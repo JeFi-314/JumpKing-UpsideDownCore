@@ -11,7 +11,7 @@ using JumpKing.GameManager;
 using System.Diagnostics;
 
 namespace UpsideDownCore.Patching;
-public class WaterParticleSpawningBehaviour
+internal class WaterParticleSpawningBehaviour
 {
     public WaterParticleSpawningBehaviour (Harmony harmony)
     {

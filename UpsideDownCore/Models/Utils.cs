@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace UpsideDownCore.Models;
-public static class Utils
+internal static class Utils
 {
     public static bool reverseComparison(float left, float right, string opcode, bool reverse) {
         if (reverse) {

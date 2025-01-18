@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System;
 
 namespace UpsideDownCore.Patching;
-public class GuardtowerSoulBugFixBehaviour
+internal class GuardtowerSoulBugFixBehaviour
 {
     public GuardtowerSoulBugFixBehaviour (Harmony harmony)
     {

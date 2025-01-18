@@ -11,7 +11,7 @@ using JumpKing.GameManager;
 using System.Diagnostics;
 
 namespace UpsideDownCore.Patching;
-public class AirAnim
+internal class AirAnim
 {
     public AirAnim (Harmony harmony)
     {

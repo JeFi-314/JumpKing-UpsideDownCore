@@ -11,7 +11,7 @@ using JumpKing.GameManager;
 using System.Diagnostics;
 
 namespace UpsideDownCore.Patching;
-public class FailState
+internal class FailState
 {
     public FailState (Harmony harmony)
     {

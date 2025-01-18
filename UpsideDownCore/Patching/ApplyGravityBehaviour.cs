@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System;
 
 namespace UpsideDownCore.Patching;
-public class ApplyGravityBehaviour
+internal class ApplyGravityBehaviour
 {
     public ApplyGravityBehaviour (Harmony harmony)
     {

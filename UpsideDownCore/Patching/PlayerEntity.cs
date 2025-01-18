@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace UpsideDownCore.Patching;
-public class PlayerEntity
+internal class PlayerEntity
 {
     public PlayerEntity (Harmony harmony)
     {

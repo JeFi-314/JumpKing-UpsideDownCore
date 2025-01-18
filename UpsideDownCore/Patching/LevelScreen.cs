@@ -12,7 +12,7 @@ using System.Diagnostics;
 using JumpKing.Level;
 
 namespace UpsideDownCore.Patching;
-public class LevelScreen
+internal class LevelScreen
 {
     public LevelScreen (Harmony harmony)
     {

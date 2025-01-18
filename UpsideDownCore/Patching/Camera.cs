@@ -9,7 +9,7 @@ using System;
 using Microsoft.Xna.Framework;
 
 namespace UpsideDownCore.Patching;
-public class Camera
+internal class Camera
 {
     public Camera (Harmony harmony)
     {

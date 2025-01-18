@@ -110,10 +110,10 @@ public class LevelScreen
     }
 
     private static bool revGEii(int left, int right) {
-        return Utils.reverseComparison(left, right, "ge", UpsideDownCore.isUpsideDown);
+        return Models.Utils.reverseComparison(left, right, "ge", UpsideDownCore.isUpsideDown);
     }
     private static bool revGTii(int left, int right) {
-        return Utils.reverseComparison(left, right, "gt", UpsideDownCore.isUpsideDown);
+        return Models.Utils.reverseComparison(left, right, "gt", UpsideDownCore.isUpsideDown);
     }
     private static bool flipSlopeType(SlopeType type) {
         if (UpsideDownCore.isUpsideDown) {

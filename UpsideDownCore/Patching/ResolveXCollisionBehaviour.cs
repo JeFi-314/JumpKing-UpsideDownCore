@@ -74,9 +74,9 @@ public class ResolveXCollisionBehaviour
     }
 
     private static bool revGTff(float left, float right) {
-        return Utils.reverseComparison(left, right, "gt", UpsideDownCore.isUpsideDown);
+        return Models.Utils.reverseComparison(left, right, "gt", UpsideDownCore.isUpsideDown);
     }
     private static bool revLEff(float left, float right) {
-        return Utils.reverseComparison(left, right, "le", UpsideDownCore.isUpsideDown);
+        return Models.Utils.reverseComparison(left, right, "le", UpsideDownCore.isUpsideDown);
     }
 }

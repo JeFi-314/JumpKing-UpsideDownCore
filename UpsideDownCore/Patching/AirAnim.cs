@@ -49,6 +49,6 @@ public class AirAnim
     }
 
     private static bool revLEff(float left, float right) {
-        return Utils.reverseComparison(left, right, "le", UpsideDownCore.isUpsideDown);
+        return Models.Utils.reverseComparison(left, right, "le", UpsideDownCore.isUpsideDown);
     }
 }

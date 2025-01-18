@@ -143,13 +143,13 @@ public class SandBlockBehaviour
     }
 
     private static bool revLEff(float left, float right) {
-        return Utils.reverseComparison(left, right, "le", UpsideDownCore.isUpsideDown);
+        return Models.Utils.reverseComparison(left, right, "le", UpsideDownCore.isUpsideDown);
     }
     private static float negative(float value) {
-        return Utils.negative(value, UpsideDownCore.isUpsideDown);
+        return Models.Utils.negative(value, UpsideDownCore.isUpsideDown);
     }
     private static bool revLTff(float left, float right) {
-        return Utils.reverseComparison(left, right, "lt", UpsideDownCore.isUpsideDown);
+        return Models.Utils.reverseComparison(left, right, "lt", UpsideDownCore.isUpsideDown);
     }
     private static float capYVelocity(float cap, float y) {
         return UpsideDownCore.isUpsideDown ? Math.Max(y, -cap) : Math.Min(y, cap);

@@ -49,6 +49,6 @@ private static IEnumerable<CodeInstruction> transpileMyRun(IEnumerable<CodeInstr
     }
 
     private static float negative(float value) {
-        return Utils.negative(value, UpsideDownCore.isUpsideDown);
+        return Models.Utils.negative(value, UpsideDownCore.isUpsideDown);
     }
 }

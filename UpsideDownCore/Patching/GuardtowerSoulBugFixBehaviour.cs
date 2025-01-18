@@ -40,7 +40,7 @@ public class GuardtowerSoulBugFixBehaviour
     }
 
     private static int negative(int value) {
-        return (int)Utils.negative(value, UpsideDownCore.isUpsideDown);
+        return (int)Models.Utils.negative(value, UpsideDownCore.isUpsideDown);
     }
 }
 

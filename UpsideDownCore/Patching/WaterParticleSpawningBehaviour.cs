@@ -64,6 +64,6 @@ public class WaterParticleSpawningBehaviour
     }
 
     private static bool revLTff(float left, float right) {
-        return Utils.reverseComparison(left, right, "lt", UpsideDownCore.isUpsideDown);
+        return Models.Utils.reverseComparison(left, right, "lt", UpsideDownCore.isUpsideDown);
     }
 }

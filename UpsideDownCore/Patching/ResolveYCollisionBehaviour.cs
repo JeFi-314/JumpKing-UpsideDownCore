@@ -79,12 +79,12 @@ public class ResolveYCollisionBehaviour
 
     // CAUSION! local variable num is int not float
     private static bool revLEif(int left, float right) {
-        return Utils.reverseComparison((float)left, right, "le", UpsideDownCore.isUpsideDown);
+        return Models.Utils.reverseComparison((float)left, right, "le", UpsideDownCore.isUpsideDown);
     }
     private static bool revLEff(float left, float right) {
-        return Utils.reverseComparison(left, right, "le", UpsideDownCore.isUpsideDown);
+        return Models.Utils.reverseComparison(left, right, "le", UpsideDownCore.isUpsideDown);
     }
     private static float negative(float value) {
-        return Utils.negative(value, UpsideDownCore.isUpsideDown);
+        return Models.Utils.negative(value, UpsideDownCore.isUpsideDown);
     }
 }

@@ -1,13 +1,11 @@
 ﻿using System;
 
-namespace UpsideDownCore;
+namespace UpsideDownCore.Models;
 public static class Utils
 {
     public static bool reverseComparison(float left, float right, string opcode, bool reverse) {
         if (reverse) {
             switch (opcode) {
-                case "eq": opcode = "eq"; break;
-                case "ne": opcode = "ne"; break;
                 case "gt": opcode = "lt"; break;
                 case "lt": opcode = "gt"; break;
                 case "ge": opcode = "le"; break;
@@ -17,10 +15,6 @@ public static class Utils
         }
 
         switch (opcode) {
-            case "eq":
-                return left == right;
-            case "ne":
-                return left != right;
             case "gt":
                 return left > right;
             case "lt":

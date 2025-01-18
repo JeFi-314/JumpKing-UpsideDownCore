@@ -50,7 +50,7 @@ public class Walk
     }
 
     private static bool revGEff(float left, float right) {
-        return Utils.reverseComparison(left, right, "ge", UpsideDownCore.isUpsideDown);
+        return Models.Utils.reverseComparison(left, right, "ge", UpsideDownCore.isUpsideDown);
     }
 }
 

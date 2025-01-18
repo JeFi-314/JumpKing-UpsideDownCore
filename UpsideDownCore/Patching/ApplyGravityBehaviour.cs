@@ -58,7 +58,7 @@ public class ApplyGravityBehaviour
     }
 
     private static float negative(float value) {
-        return Utils.negative(value, UpsideDownCore.isRevertGravity);
+        return Models.Utils.negative(value, UpsideDownCore.isRevertGravity);
     }
 
     private static float capYVelocity(float y, float cap) {

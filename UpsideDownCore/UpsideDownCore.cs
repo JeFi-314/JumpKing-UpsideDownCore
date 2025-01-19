@@ -18,8 +18,8 @@ public static class UpsideDownCore
     const string HARMONY_IDENTIFIER = "JeFi.UpsideDownCore.Harmony";
 
     public static string AssemblyPath { get; set; }
-    public static bool isUpsideDown = false;
-    public static bool isRevertGravity = false;
+    public static bool isUpsideDown = true;
+    public static bool isRevertGravity = true;
 
 
     [BeforeLevelLoad]
@@ -36,6 +36,7 @@ public static class UpsideDownCore
         Harmony harmony = new Harmony(HARMONY_IDENTIFIER);
 
         try {
+            new Patching.SlopeBlock(harmony);
             new Patching.Camera(harmony);
             new Patching.LevelScreen(harmony);
             new Patching.WaterParticleSpawningBehaviour(harmony);

@@ -70,6 +70,13 @@ public static class UpsideDownCore
 #endif
     }
 
+    [OnLevelStart]
+    public static void OnLevelStart()
+    {
+        // reset Controller
+        Controller.Reset();
+    }
+
 #if DEBUG
     #region Menu Items
     [PauseMenuItemSetting]

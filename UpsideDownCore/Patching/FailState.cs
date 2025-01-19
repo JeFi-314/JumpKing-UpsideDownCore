@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System;
 using JumpKing.GameManager;
 using System.Diagnostics;
+using UpsideDownCore.Models;
 
 namespace UpsideDownCore.Patching;
 internal class FailState
@@ -49,6 +50,6 @@ private static IEnumerable<CodeInstruction> transpileMyRun(IEnumerable<CodeInstr
     }
 
     private static float negative(float value) {
-        return Models.Utils.negative(value, UpsideDownCore.isUpsideDown);
+        return Models.Utils.negative(value, Manager.isUpsideDown);
     }
 }

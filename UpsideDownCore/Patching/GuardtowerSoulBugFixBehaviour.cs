@@ -6,6 +6,7 @@ using System.Reflection.Emit;
 using System.Collections.Generic;
 
 using System;
+using UpsideDownCore.Models;
 
 namespace UpsideDownCore.Patching;
 internal class GuardtowerSoulBugFixBehaviour
@@ -40,7 +41,7 @@ internal class GuardtowerSoulBugFixBehaviour
     }
 
     private static int negative(int value) {
-        return (int)Models.Utils.negative(value, UpsideDownCore.isUpsideDown);
+        return (int)Models.Utils.negative(value, Manager.isUpsideDown);
     }
 }
 

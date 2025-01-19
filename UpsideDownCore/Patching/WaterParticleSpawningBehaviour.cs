@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System;
 using JumpKing.GameManager;
 using System.Diagnostics;
+using UpsideDownCore.Models;
 
 namespace UpsideDownCore.Patching;
 internal class WaterParticleSpawningBehaviour
@@ -64,6 +65,6 @@ internal class WaterParticleSpawningBehaviour
     }
 
     private static bool revLTff(float left, float right) {
-        return Models.Utils.reverseComparison(left, right, "lt", UpsideDownCore.isUpsideDown);
+        return Models.Utils.reverseComparison(left, right, "lt", Manager.isUpsideDown);
     }
 }

@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using UpsideDownCore.Models;
 
 namespace UpsideDownCore.Patching;
 internal class SandBlockBehaviour
@@ -143,15 +144,15 @@ internal class SandBlockBehaviour
     }
 
     private static bool revLEff(float left, float right) {
-        return Models.Utils.reverseComparison(left, right, "le", UpsideDownCore.isUpsideDown);
+        return Models.Utils.reverseComparison(left, right, "le", Manager.isUpsideDown);
     }
     private static float negative(float value) {
-        return Models.Utils.negative(value, UpsideDownCore.isUpsideDown);
+        return Models.Utils.negative(value, Manager.isUpsideDown);
     }
     private static bool revLTff(float left, float right) {
-        return Models.Utils.reverseComparison(left, right, "lt", UpsideDownCore.isUpsideDown);
+        return Models.Utils.reverseComparison(left, right, "lt", Manager.isUpsideDown);
     }
     private static float capYVelocity(float cap, float y) {
-        return UpsideDownCore.isUpsideDown ? Math.Max(y, -cap) : Math.Min(y, cap);
+        return Manager.isUpsideDown ? Math.Max(y, -cap) : Math.Min(y, cap);
     }
 }

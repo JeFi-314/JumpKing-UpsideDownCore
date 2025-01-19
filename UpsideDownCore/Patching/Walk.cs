@@ -10,6 +10,7 @@ using System;
 using JumpKing.GameManager;
 using System.Diagnostics;
 using System.Linq.Expressions;
+using UpsideDownCore.Models;
 
 namespace UpsideDownCore.Patching;
 internal class Walk
@@ -50,7 +51,7 @@ internal class Walk
     }
 
     private static bool revGEff(float left, float right) {
-        return Models.Utils.reverseComparison(left, right, "ge", UpsideDownCore.isUpsideDown);
+        return Models.Utils.reverseComparison(left, right, "ge", Manager.isUpsideDown);
     }
 }
 

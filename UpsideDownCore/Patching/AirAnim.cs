@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System;
 using JumpKing.GameManager;
 using System.Diagnostics;
+using UpsideDownCore.Models;
 
 namespace UpsideDownCore.Patching;
 internal class AirAnim
@@ -49,6 +50,6 @@ internal class AirAnim
     }
 
     private static bool revLEff(float left, float right) {
-        return Models.Utils.reverseComparison(left, right, "le", UpsideDownCore.isUpsideDown);
+        return Models.Utils.reverseComparison(left, right, "le", Manager.isUpsideDown);
     }
 }

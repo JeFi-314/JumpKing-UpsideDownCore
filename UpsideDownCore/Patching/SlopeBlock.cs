@@ -12,6 +12,7 @@ using System.Diagnostics;
 using ErikMaths;
 using JumpKing.Level;
 using Microsoft.Xna.Framework;
+using UpsideDownCore.Models;
 
 namespace UpsideDownCore.Patching;
 internal class SlopeBlock
@@ -72,7 +73,7 @@ internal class SlopeBlock
     }
 
     private static Line[] slopeHitboxBugFix(Line[] lines, SlopeBlock slopeBlock) {
-        if (UpsideDownCore.isUpsideDown && (SlopeType)AccessTools.Field(typeof(JK.SlopeBlock), "m_type").GetValue(slopeBlock) == SlopeType.BottomLeft) {
+        if (Manager.isUpsideDown && (SlopeType)AccessTools.Field(typeof(JK.SlopeBlock), "m_type").GetValue(slopeBlock) == SlopeType.BottomLeft) {
             replaceLines = new Line[3];
             var box = (Rectangle)AccessTools.Field(typeof(JK.SlopeBlock), "m_box").GetValue(slopeBlock);
             box.Deconstruct(out var x, out var y, out var width, out var height);

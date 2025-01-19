@@ -18,9 +18,6 @@ public static class UpsideDownCore
     const string HARMONY_IDENTIFIER = "JeFi.UpsideDownCore.Harmony";
 
     public static string AssemblyPath { get; set; }
-    public static bool isUpsideDown = true;
-    public static bool isRevertGravity = true;
-
 
     [BeforeLevelLoad]
     public static void BeforeLevelLoad()
@@ -36,7 +33,10 @@ public static class UpsideDownCore
         Harmony harmony = new Harmony(HARMONY_IDENTIFIER);
 
         try {
+            new Patching.JumpGame(harmony);
+            // fix wrong slope hitbox
             new Patching.SlopeBlock(harmony);
+
             new Patching.Camera(harmony);
             new Patching.LevelScreen(harmony);
             new Patching.WaterParticleSpawningBehaviour(harmony);
@@ -74,9 +74,9 @@ public static class UpsideDownCore
     #region Menu Items
     [PauseMenuItemSetting]
     [MainMenuItemSetting]
-    public static ToggleUpsideDown ToggleUpsideDown(object factory, GuiFormat format)
+    public static OptionUpsideDown OptionUpsideDown(object factory, GuiFormat format)
     {
-        return new ToggleUpsideDown();
+        return new OptionUpsideDown();
     }
 
     [PauseMenuItemSetting]

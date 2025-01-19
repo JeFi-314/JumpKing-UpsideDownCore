@@ -6,6 +6,7 @@ using System.Reflection.Emit;
 using System.Collections.Generic;
 
 using System;
+using UpsideDownCore.Models;
 
 namespace UpsideDownCore.Patching;
 internal class ApplyGravityBehaviour
@@ -36,7 +37,7 @@ internal class ApplyGravityBehaviour
         ).ThrowIfInvalid($"Cant find code in {nameof(ApplyGravityBehaviour)}")
         .Advance(6)
         .InsertAndAdvance(
-            new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ApplyGravityBehaviour), nameof(negative)))
+            new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(ApplyGravityBehaviour), nameof(captureGravity)))
         )
         .MatchStartForward(
             // bodyComp.Velocity.Y = Math.Min(bodyComp.Velocity.Y, PlayerValues.MAX_FALL);
@@ -57,12 +58,14 @@ internal class ApplyGravityBehaviour
         return matcher.Instructions();
     }
 
-    private static float negative(float value) {
-        return Models.Utils.negative(value, UpsideDownCore.isRevertGravity);
+    private static float captureGravity(float originGravity) {
+        float finalGravity = Models.Utils.negative(originGravity, Manager.isReverseGravity);
+        Manager.gravity = finalGravity;
+        return finalGravity;
     }
 
     private static float capYVelocity(float y, float cap) {
-        return UpsideDownCore.isRevertGravity ? Math.Max(y, -cap) : Math.Min(y, cap);
+        return Manager.isReverseGravity ? Math.Max(y, -cap) : Math.Min(y, cap);
     }
 }
 

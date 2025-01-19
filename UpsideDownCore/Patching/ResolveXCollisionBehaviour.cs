@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System;
 using JumpKing.GameManager;
 using System.Diagnostics;
+using UpsideDownCore.Models;
 
 namespace UpsideDownCore.Patching;
 internal class ResolveXCollisionBehaviour
@@ -74,9 +75,9 @@ internal class ResolveXCollisionBehaviour
     }
 
     private static bool revGTff(float left, float right) {
-        return Models.Utils.reverseComparison(left, right, "gt", UpsideDownCore.isUpsideDown);
+        return Models.Utils.reverseComparison(left, right, "gt", Manager.isUpsideDown);
     }
     private static bool revLEff(float left, float right) {
-        return Models.Utils.reverseComparison(left, right, "le", UpsideDownCore.isUpsideDown);
+        return Models.Utils.reverseComparison(left, right, "le", Manager.isUpsideDown);
     }
 }

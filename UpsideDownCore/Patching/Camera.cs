@@ -7,6 +7,7 @@ using System.Collections.Generic;
 
 using System;
 using Microsoft.Xna.Framework;
+using UpsideDownCore.Models;
 
 namespace UpsideDownCore.Patching;
 internal class Camera
@@ -51,6 +52,6 @@ internal class Camera
     }
 
     private static bool revGEff(float left, float right) {
-        return Models.Utils.reverseComparison(left, right, "ge", UpsideDownCore.isUpsideDown);
+        return Models.Utils.reverseComparison(left, right, "ge", Manager.isUpsideDown);
     }
 }

@@ -10,6 +10,7 @@ using System;
 using JumpKing.GameManager;
 using System.Diagnostics;
 using JumpKing.Level;
+using UpsideDownCore.Models;
 
 namespace UpsideDownCore.Patching;
 internal class LevelScreen
@@ -110,13 +111,13 @@ internal class LevelScreen
     }
 
     private static bool revGEii(int left, int right) {
-        return Models.Utils.reverseComparison(left, right, "ge", UpsideDownCore.isUpsideDown);
+        return Models.Utils.reverseComparison(left, right, "ge", Manager.isUpsideDown);
     }
     private static bool revGTii(int left, int right) {
-        return Models.Utils.reverseComparison(left, right, "gt", UpsideDownCore.isUpsideDown);
+        return Models.Utils.reverseComparison(left, right, "gt", Manager.isUpsideDown);
     }
     private static bool flipSlopeType(SlopeType type) {
-        if (UpsideDownCore.isUpsideDown) {
+        if (Manager.isUpsideDown) {
             return type==SlopeType.BottomLeft || type==SlopeType.BottomRight;
         } else {
             return type==SlopeType.TopLeft || type==SlopeType.TopRight;

@@ -3,14 +3,14 @@
 namespace UpsideDownCore.Menu;
 public class ToggleReverseGravity : ITextToggle
 {
-    public ToggleReverseGravity() : base(UpsideDownCore.isRevertGravity)
+    public ToggleReverseGravity() : base(Controller.isReverseGravity)
     {
     }
 
-    protected override string GetName() => "Revert Gravity";
+    protected override string GetName() => "Reverse Gravity";
 
     protected override void OnToggle()
     {
-        UpsideDownCore.isRevertGravity = toggle;
+        Controller.isReverseGravity = toggle;
     }
 }

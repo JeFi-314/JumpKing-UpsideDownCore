@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System;
 using JumpKing.GameManager;
 using System.Diagnostics;
+using UpsideDownCore.Models;
 
 namespace UpsideDownCore.Patching;
 internal class ResolveYCollisionBehaviour
@@ -79,12 +80,12 @@ internal class ResolveYCollisionBehaviour
 
     // CAUSION! local variable num is int not float
     private static bool revLEif(int left, float right) {
-        return Models.Utils.reverseComparison((float)left, right, "le", UpsideDownCore.isUpsideDown);
+        return Models.Utils.reverseComparison((float)left, right, "le", Manager.isUpsideDown);
     }
     private static bool revLEff(float left, float right) {
-        return Models.Utils.reverseComparison(left, right, "le", UpsideDownCore.isUpsideDown);
+        return Models.Utils.reverseComparison(left, right, "le", Manager.isUpsideDown);
     }
     private static float negative(float value) {
-        return Models.Utils.negative(value, UpsideDownCore.isUpsideDown);
+        return Models.Utils.negative(value, Manager.isUpsideDown);
     }
 }

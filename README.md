@@ -16,7 +16,7 @@ You can find this mod on [Steam Workshop Page](https://steamcommunity.com/shared
 
 ---
 
-## Features
+## Interfaces
 
 The `Controller` class in the root namespace serves as the public interface for this mod. It includes the following members:
 
@@ -61,7 +61,7 @@ If other mods also modify the same IL code, this mod may not work correctly (it 
 
 ---
 
-# To Do
+## To Do
 
 1. Event hook: Provide a public interface for other mods to register events that respond to upside-down state changes or gravity reversals.
 2. Save file: Implement auto-saving for mod state to file.

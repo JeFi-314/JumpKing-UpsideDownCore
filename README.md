@@ -36,7 +36,7 @@ The `Controller` class in the root namespace serves as the public interface for 
 
 ---
 
-## How to Use
+## How to Use Core Mod
 
 1. **Download**: Get the latest version from the [releases page](https://github.com/JeFi-314/JumpKing-UpsideDownCore/releases).
 2. **Include the DLL in your project**:

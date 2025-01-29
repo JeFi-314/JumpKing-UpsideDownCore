@@ -30,6 +30,8 @@ The `Controller` class in the root namespace serves as the public interface for 
 
 2. `bool isReverseGravity`: A flag to reverse gravity for the entire game.
 
+(⚠ **Reminder**: Unless it's a special effect, `ExecuteBlockBehaviour` should avoid setting the controller's state when the player is no longer interacting with the block.)
+
 ### Methods
 
 1. `void Reset()`: Resets all states to normal gameplay. This method is called at the start of every level (map).

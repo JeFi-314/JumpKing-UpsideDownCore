@@ -54,7 +54,7 @@ internal class PlayerEntity
     }
 
     private static Vector2 fixPosition(Vector2 origin) {
-        return origin + (Manager.isUpsideDown ? new Vector2(0f, 23f) : Vector2.Zero);
+        return origin + (Manager.isUpsideDown ? new Vector2(0f, 22f) : Vector2.Zero);
     }
     private static int flipSpiritV(int effect) {
         return effect | (Manager.isUpsideDown ? (int)SpriteEffects.FlipVertically : 0);

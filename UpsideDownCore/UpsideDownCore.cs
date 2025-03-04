@@ -75,22 +75,27 @@ public static class UpsideDownCore
     {
         // reset Controller
         Controller.Reset();
+        
+#if DEBUG
+        OptionUpsideDown.SetOption(UpsideDownType.Flip);
+        ToggleReverseGravity.SetValue(true);
+#endif
     }
 
 #if DEBUG
     #region Menu Items
     [PauseMenuItemSetting]
     [MainMenuItemSetting]
-    public static OptionUpsideDown OptionUpsideDown(object factory, GuiFormat format)
+    public static OptionUpsideDown GetOptionUpsideDown(object factory, GuiFormat format)
     {
-        return new OptionUpsideDown();
+        return OptionUpsideDown.Instance;
     }
 
     [PauseMenuItemSetting]
     [MainMenuItemSetting]
-    public static ToggleReverseGravity ToggleReverseGravity(object factory, GuiFormat format)
+    public static ToggleReverseGravity GetToggleReverseGravity(object factory, GuiFormat format)
     {
-        return new ToggleReverseGravity();
+        return ToggleReverseGravity.Instance;
     }
     #endregion
 #endif

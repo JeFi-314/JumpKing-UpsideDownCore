@@ -3,9 +3,18 @@
 namespace UpsideDownCore.Menu;
 public class OptionUpsideDown : IOptions
 {
-    public OptionUpsideDown() : base(3, (int)Controller.upsideDownType, EdgeMode.Wrap)
-    {
+    public readonly static OptionUpsideDown Instance;
+
+    static OptionUpsideDown() {
+        Instance = new OptionUpsideDown();
     }
+    
+    public static void SetOption(UpsideDownType value)
+    {
+        Instance.CurrentOption = (int)value;
+    } 
+
+    private OptionUpsideDown() : base(3, (int)Controller.upsideDownType, EdgeMode.Wrap) {}
 
     protected override bool CanChange()
     {
